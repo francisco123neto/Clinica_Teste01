@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "admin",
-    "database": "clinica topico 02",
+    "database": "clinica_topico_02",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
