@@ -1,0 +1,23 @@
+{
+  "name": "clinica_teste01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./api/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francisco123neto/Clinica_Teste01.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francisco123neto/Clinica_Teste01/issues"
+  },
+  "homepage": "https://github.com/francisco123neto/Clinica_Teste01#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
