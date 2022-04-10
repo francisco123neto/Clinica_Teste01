@@ -12,6 +12,16 @@ module.exports = {
       statusPessoa: 'Paciente',
       createdAt: new Date(),
       updatedAt: new Date()
+    },
+    {
+      nome: 'Marcos Neves',
+      cpf: '5339404254-39',
+      nascimento: '15/11/1979',
+      tipoSanguineo: 'O+',
+      sexo: 'Masculino',
+      statusPessoa: 'Médico',
+      createdAt: new Date(),
+      updatedAt: new Date()
     }], {});
 
   },
