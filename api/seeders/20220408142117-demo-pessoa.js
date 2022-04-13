@@ -14,6 +14,16 @@ module.exports = {
       updatedAt: new Date()
     },
     {
+      nome: 'Maria José',
+      cpf: '5339404254-35',
+      nascimento: '15/11/1959',
+      tipoSanguineo: 'O+',
+      sexo: 'Feminino',
+      statusPessoa: 'Paciente',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
       nome: 'Marcos Neves',
       cpf: '5339404254-39',
       nascimento: '15/11/1979',
