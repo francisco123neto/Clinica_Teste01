@@ -20,6 +20,16 @@ module.exports = {
       altura: {
         type: Sequelize.FLOAT
       },
+      medico_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'Pessoas', key: 'id' }
+      },
+      atendimento_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'Atendimentos', key: 'id' }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

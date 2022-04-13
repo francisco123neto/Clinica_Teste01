@@ -17,6 +17,11 @@ module.exports = {
       statusAtendimento: {
         type: Sequelize.STRING
       },
+      paciente_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'Pessoas', key: 'id' }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
