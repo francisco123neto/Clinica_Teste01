@@ -4,19 +4,27 @@ import { Text, StyleSheet, View, Image, TextInput, TouchableOpacity } from 'reac
 export default class App extends Component {
     render() {
         return (
-            <View style={StyleSheet.container}>
+            <View style={styles.container}>
 
                 <TextInput
-                style={StyleSheet.input}
-                placeholder="Digite seu email"
+                    style={styles.input}
+                    placeholder="Digite seu email"
                 />
 
                 <TextInput
-                style
-                
+                    style={styles.input}
+                    secureTextEntry={true}
+                    placeholder="Digite sua senha"
+                />
 
-
+                <TouchableOpacity
+                    style={styles.botao}
+                    onPress={ () => {this.clicou()}}
+                    >
+                    <Text style={styles.botaoText}>Login</Text>
+                </TouchableOpacity>
 
             </View>
         )
+    }
 }
