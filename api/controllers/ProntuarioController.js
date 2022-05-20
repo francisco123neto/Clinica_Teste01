@@ -3,7 +3,7 @@ const database = require('../models')
 class ProntuarioController {
     static async pegaTodosOsProntuarios(req, res) {
         try {
-            const todosOsProntuarios = await database.Prontuarios.findAll()
+            const todosOsProntuarios = await database.Prontuario.findAll()
             return res.status(200).json(todosOsProntuarios)
         } catch {
             return res.status(500).json(error.message)
@@ -14,7 +14,7 @@ class ProntuarioController {
     static async pegaUmProntuario(req, res) {
         const { id } = req.params
         try {
-            const umProntuario = await database.Prontuarios.findOne({
+            const umProntuario = await database.Prontuario.findOne({
                 where: {
                     id: Number(id)
                 }
@@ -29,7 +29,7 @@ class ProntuarioController {
     static async criaProntuario(req, res) {
         const novoProntuario = req.body
         try {
-            const novoProntuarioCriado = await database.Prontuarios.create(novoProntuario)
+            const novoProntuarioCriado = await database.Prontuario.create(novoProntuario)
             return res.status(200).json(novoProntuarioCriado)
         } catch (error) {
             return res.status(500).json(error.message)
@@ -41,10 +41,10 @@ class ProntuarioController {
         const { id } = req.params
         const novasInfos = req.body
         try {
-            await database.Prontuarios.update(novasInfos, {
+            await database.Prontuario.update(novasInfos, {
                 where: { id: Number(id) }
             })
-            const prontuarioAtualizado = await database.Prontuarios.findOne({
+            const prontuarioAtualizado = await database.Prontuario.findOne({
                 where: { id: Number(id) }
             })
             return res.status(200).json(prontuarioAtualizado)
@@ -57,7 +57,7 @@ class ProntuarioController {
     static async deletaProntuario(req, res) {
         const { id } = req.params
         try {
-            await database.Prontuarios.destroy({
+            await database.Prontuario.destroy({
                 where: { id: Number(id) }
             })
             return res.status(200).json({mensagem: `id ${id} deletado`})
