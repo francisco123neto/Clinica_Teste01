@@ -3,7 +3,7 @@ const database = require('../models')
 class AtendimentoController {
     static async pegaTodosOsAtendimentos(req, res) {
         try {
-            const todosOsAtendimentos = await database.Atendimentos.findAll()
+            const todosOsAtendimentos = await database.Atendimento.findAll()
             return res.status(200).json(todosOsAtendimentos)
         } catch {
             return res.status(500).json(error.message)
@@ -14,7 +14,7 @@ class AtendimentoController {
     static async pegaUmAtendimento(req, res) {
         const { id } = req.params
         try {
-            const umAtendimento = await database.Atendimentos.findOne({
+            const umAtendimento = await database.Atendimento.findOne({
                 where: {
                     id: Number(id)
                 }
@@ -29,7 +29,7 @@ class AtendimentoController {
     static async criaAtendimento(req, res) {
         const novoAtendimento = req.body
         try {
-            const novoAtendimentoCriado = await database.Atendimentos.create(novoAtendimento)
+            const novoAtendimentoCriado = await database.Atendimento.create(novoAtendimento)
             return res.status(200).json(novoAtendimentoCriado)
         } catch (error) {
             return res.status(500).json(error.message)
@@ -41,10 +41,10 @@ class AtendimentoController {
         const { id } = req.params
         const novasInfos = req.body
         try {
-            await database.Atendimentos.update(novasInfos, {
+            await database.Atendimento.update(novasInfos, {
                 where: { id: Number(id) }
             })
-            const atendimentoAtualizado = await database.Atendimentos.findOne({
+            const atendimentoAtualizado = await database.Atendimento.findOne({
                 where: { id: Number(id) }
             })
             return res.status(200).json(atendimentoAtualizado)
@@ -57,7 +57,7 @@ class AtendimentoController {
     static async deletaAtendimento(req, res) {
         const { id } = req.params
         try {
-            await database.Atendimentos.destroy({
+            await database.Atendimento.destroy({
                 where: { id: Number(id) }
             })
             return res.status(200).json({mensagem: `id ${id} deletado`})
