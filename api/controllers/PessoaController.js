@@ -1,4 +1,5 @@
 const database = require('../models')
+const bcrypt = require("bcrypt")
 
 class PessoaController {
     static async pegaTodasAsPessoas(req, res) {
@@ -27,9 +28,12 @@ class PessoaController {
     }
 
     static async criaPessoa(req, res) {
-        const novaPessoa = req.body
+        const saltRounds = 10
+        const {nome, cpf, nascimento, tipoSanguineo, sexo, statusPessoa, email, senha} = req.body
         try {
-            const novaPessoaCriada = await database.Pessoas.create(novaPessoa)
+            const hashSenha = await bcrypt.hash(senha, saltRounds)
+            const novaPessoaCriada = await database.Pessoas.create({nome, cpf, nascimento, 
+                tipoSanguineo, sexo, statusPessoa, email, senha: hashSenha})
             return res.status(200).json(novaPessoaCriada)
         } catch (error) {
             return res.status(500).json(error.message)

@@ -10,6 +10,8 @@ module.exports = {
       tipoSanguineo: 'A+',
       sexo: 'Masculino',
       statusPessoa: 'Paciente',
+      email: 'john@gmail.com',
+      senha: '14ff8fd',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -20,6 +22,8 @@ module.exports = {
       tipoSanguineo: 'O+',
       sexo: 'Feminino',
       statusPessoa: 'Paciente',
+      email: 'maria@gmail.com',
+      senha: '14fadadd',
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -30,6 +34,8 @@ module.exports = {
       tipoSanguineo: 'O+',
       sexo: 'Masculino',
       statusPessoa: 'Médico',
+      email: 'marcos@gmail.com',
+      senha: 'fdad12d',
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});
