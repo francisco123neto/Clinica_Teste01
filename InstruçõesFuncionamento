@@ -1,0 +1,15 @@
+npm start - inicializa o projeto
+
+Back-end:
+npm install - instalar os modulos node.js
+npx sequelize-cli db:create - vai criar o banco de dados
+npx sequelize-cli db:migrate:seed all - vai popular as tabelas com os dados salvos na pasta "seeders"
+npx sequelize-cli db:migrate:undo all - vai apagar todos os dados das tabelas
+
+Front-end:
+instale o nvm através do link abaixo;
+npx create-react-app 'nome do projeto' - cria o projeto react
+
+
+
+https://github.com/coreybutler/nvm-windows/releases - site para baixar o nvm
